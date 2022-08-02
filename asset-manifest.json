@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/github.io/shopping-cart-redux-toolkit/static/css/main.86b7382c.css",
+    "main.js": "/github.io/shopping-cart-redux-toolkit/static/js/main.dde44e0c.js",
+    "static/media/course-5.png": "/github.io/shopping-cart-redux-toolkit/static/media/course-5.565f69118e03febff249.png",
+    "static/media/course-2.png": "/github.io/shopping-cart-redux-toolkit/static/media/course-2.de018044d9c6b769e679.png",
+    "static/media/course-1.png": "/github.io/shopping-cart-redux-toolkit/static/media/course-1.d31a1e9414c2b6bf19f1.png",
+    "static/media/course-3.png": "/github.io/shopping-cart-redux-toolkit/static/media/course-3.182a1e53130e2182d825.png",
+    "static/media/course-6.png": "/github.io/shopping-cart-redux-toolkit/static/media/course-6.c8b0970bc406ba816cd9.png",
+    "static/media/course-4.png": "/github.io/shopping-cart-redux-toolkit/static/media/course-4.4dfcecec245b686ea583.png",
+    "index.html": "/github.io/shopping-cart-redux-toolkit/index.html",
+    "main.86b7382c.css.map": "/github.io/shopping-cart-redux-toolkit/static/css/main.86b7382c.css.map",
+    "main.dde44e0c.js.map": "/github.io/shopping-cart-redux-toolkit/static/js/main.dde44e0c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.86b7382c.css",
+    "static/js/main.dde44e0c.js"
+  ]
+}
