@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsCart2 } from "react-icons/bs";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const totalQuantity = useSelector((store) => store.cart.totalQuantity);

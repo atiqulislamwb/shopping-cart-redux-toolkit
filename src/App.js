@@ -1,13 +1,39 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import Notification from "./components/Notification";
+import { sendCartDataToFirebase } from "./redux-toolkit/cartAction";
+import { fetchCartData } from "./redux-toolkit/cartAction";
+
 function App() {
+  let isFirstRender = true;
+  const dispatch = useDispatch();
+  const { cartItems, changed } = useSelector((store) => store.cart);
+  const { notification } = useSelector((store) => store.notification);
+  useEffect(() => {
+    dispatch(fetchCartData());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (isFirstRender) {
+      isFirstRender = false;
+      return;
+    }
+    if (cartItems.changed) {
+      dispatch(sendCartDataToFirebase(cartItems));
+    }
+  }, [cartItems, dispatch]);
+
   return (
-    <div className=" bg-[#defdff] text-white font-mono w-screen h-screen  ">
+    <div className=" bg-[#dafdff] text-white font-mono w-screen h-screen  ">
+      {notification && (
+        <Notification type={notification.type} message={notification.message} />
+      )}
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cart" element={<Cart />} />

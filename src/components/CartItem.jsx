@@ -22,7 +22,11 @@ const CartItem = ({ item }) => {
     <div className="flex items-center justify-between text-black mt-4 ">
       <div className="flex items-center justify-center">
         <div className="w-14 h-16">
-          <img src={item.img} className="w-full h-full object-fill" />
+          <img
+            src={item.img}
+            className="w-full h-full object-fill"
+            alt="cartItems"
+          />
         </div>
         <div className="text-left ml-7">
           <h1 className="text-slate-800 text-base font-mono">{item.name}</h1>
