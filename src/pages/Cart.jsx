@@ -6,6 +6,7 @@ import { removeAllFromCart } from "../redux-toolkit/cartSlice";
 
 const Cart = () => {
   const { cartItems } = useSelector((store) => store.cart);
+  console.log(cartItems);
   let cartTotalPrice = 0;
   cartItems.forEach((cartItem) => {
     cartTotalPrice += cartItem.totalPrice;

@@ -5,27 +5,33 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import { useSelector, useDispatch } from "react-redux";
 import Notification from "./components/Notification";
-import { sendCartDataToFirebase } from "./redux-toolkit/cartAction";
-import { fetchCartData } from "./redux-toolkit/cartAction";
+import { getCartItems } from "./redux-toolkit/cartSlice";
+// import { sendCartDataToFirebase } from "./redux-toolkit/cartAction";
+// import { fetchCartData } from "./redux-toolkit/cartAction";
 
 function App() {
-  let isFirstRender = true;
+  // let isFirstRender = true;
   const dispatch = useDispatch();
-  const { cartItems, changed } = useSelector((store) => store.cart);
+  // const { cartItems, changed } = useSelector((store) => store.cart);
   const { notification } = useSelector((store) => store.notification);
-  useEffect(() => {
-    dispatch(fetchCartData());
-  }, [dispatch]);
+
+  // useEffect(() => {
+  //   dispatch(fetchCartData());
+  // }, [dispatch]);
+
+  // useEffect(() => {
+  //   if (isFirstRender) {
+  //     isFirstRender = false;
+  //     return;
+  //   }
+  //   if (cartItems.changed) {
+  //     dispatch(sendCartDataToFirebase(cartItems));
+  //   }
+  // }, [cartItems, dispatch]);
 
   useEffect(() => {
-    if (isFirstRender) {
-      isFirstRender = false;
-      return;
-    }
-    if (cartItems.changed) {
-      dispatch(sendCartDataToFirebase(cartItems));
-    }
-  }, [cartItems, dispatch]);
+    dispatch(getCartItems());
+  });
 
   return (
     <div className=" bg-[#dafdff] text-white font-mono w-screen h-screen  ">
@@ -43,3 +49,7 @@ function App() {
 }
 
 export default App;
+
+if (false) {
+  console.log("false");
+}

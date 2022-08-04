@@ -4,9 +4,9 @@ import { BsCart2 } from "react-icons/bs";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const totalQuantity = useSelector((store) => store.cart.totalQuantity);
+  const { totalQuantity } = useSelector((store) => store.cart);
   return (
-    <div className="w-full flex items-center bg-[#261a33] justify-between px-10 py-10 ">
+    <div className="w-full flex items-center bg-[#261a33] justify-between px-10 py-6 ">
       <div className="text-5xl font-bold">
         <Link to="/">Redux Toolkit</Link>
         <p className="text-xl text-cyan-600 ">Shopping Cart</p>
